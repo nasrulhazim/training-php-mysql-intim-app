@@ -45,13 +45,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     ( :username, :name, :password, :email, NOW(), NOW())";
 
     $data = [
-      'username' => $username,
-      'name' => $name,
-      'password' => md5($password),
-      'email' => $email
+      ':username' => $username,
+      ':name' => $name,
+      ':password' => md5($password),
+      ':email' => $email
     ];
 
-    $user = execute($sql, $data);
+    $sth = $conn->prepare($sql);
+    $sth->bindParam(':username', $_POST['username']);
+    $sth->bindParam(':name', $_POST['name']);
+    $sth->bindParam(':password', md5($_POST['password']));
+    $sth->bindParam(':email', $_POST['email']);
+    
+    if($sth->execute()) {
+      $user = $conn->lastInsertId();
+    } else {
+      $user = false;
+    }
+    //$user = execute($sql, $data);
   }
   
   if($user) {

@@ -24,11 +24,14 @@ function query($query) {
 function execute($sql, $bind) {
 	global $conn;
 	$sth = $conn->prepare($sql);
+
 	if(!empty($bind)) {
 		foreach ($bind as $key => $value) {
-			$sth->bindParam(':'.$key, $value);
+			$sth->bindParam($key, $value);
 		}
 	}
+
+	// exit();
 	// if it's insert statement, 
 	// 		return inserted id if successfully insert record
 	// else
