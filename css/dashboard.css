@@ -39,13 +39,3 @@ body, html {
     padding: 5px 10px 5px 10px;
     border-radius: 27px;
 }
-footer {
-    position: absolute; 
-    bottom: 0; 
-    left: 0;
-    height: 60px; 
-    background-color: #fefefe;
-    width: 100%;
-    text-align: center;
-    padding-top: 20px;
-}

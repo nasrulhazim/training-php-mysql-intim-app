@@ -1,5 +1,5 @@
 <?php 
-
+// Reference: http://php.net/manual/en/book.pdo.php
 $servername = "localhost";
 $username = "root";
 $password = "";

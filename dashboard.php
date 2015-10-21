@@ -3,12 +3,15 @@
   $title = 'My Web Application';
   require_once '_include_.php';
   require_once 'controller/check-authorization.php';
-  var_dump($_SESSION['user']);
+
 ?>
 
   <link href="css/dashboard.css" rel="stylesheet">
 
-  <a href="logout.php" class="btn btn-primary pull-right" >Logout</a>
+  <div class="btn-group pull-right">
+    <a href="users.php" class="btn btn-primary">Users</a>
+    <a href="logout.php" class="btn btn-primary" >Logout</a>
+  </div>
   
   <?php message();  ?>
 
