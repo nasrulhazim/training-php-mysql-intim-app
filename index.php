@@ -5,7 +5,7 @@
 ?>
 
 <?php message(); ?>
-
+<?php p(UPLOAD_URL); ?>
 <form class="form-signin" method="post" action="login.php">
     <input type="text" class="form-control" name="username" placeholder="Username" required autofocus />
     <input type="password" class="form-control" name="password" placeholder="Password" required/>
