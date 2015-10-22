@@ -12,9 +12,6 @@ function message() {
             e($_SESSION['message'], 'div', array('class' => 'alert alert-info'));
         }
 
-        // if(isset($_SESSION['auth'])) {
-        //     unset($_SESSION['auth']);
-        // }
         unset($_SESSION['message']);
     }
 }

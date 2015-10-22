@@ -3,6 +3,18 @@
   $title = 'My Web Application';
   require_once '_include_.php';
   require_once 'controller/check-authorization.php';
+
+  $page_name = str_replace(ROOT_DIR . DS,'',str_replace('.php','',__FILE__));
+  $page_list = $acl[$_SESSION['user']['role_id']];
+
+  var_dump($page_list);
+  var_dump($page_name);
+
+  if(!in_array($page_name, $page_list)) {
+  	$_SESSION['message'] = 'cobaan tak berjaya..sila coba lagi..';
+  	header('Location: dashboard.php');
+  }
+
   message();
   $users = fetchAll('select * from users');
 ?>

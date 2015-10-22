@@ -1,6 +1,8 @@
 <?php 
 // Reference: http://php.net/manual/en/book.pdo.php
 require_once 'definitions.php';
+require_once 'acl.php';
+
 $conn = null;
 
 try {
